@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SFML3_ImGUI_Game", "SFML3_ImGUI_Game.vcxproj", "{6E845F00-D928-418A-803A-C4C176EC16A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E845F00-D928-418A-803A-C4C176EC16A2}.Debug|x64.ActiveCfg = Debug|x64
+		{6E845F00-D928-418A-803A-C4C176EC16A2}.Debug|x64.Build.0 = Debug|x64
+		{6E845F00-D928-418A-803A-C4C176EC16A2}.Debug|x86.ActiveCfg = Debug|Win32
+		{6E845F00-D928-418A-803A-C4C176EC16A2}.Debug|x86.Build.0 = Debug|Win32
+		{6E845F00-D928-418A-803A-C4C176EC16A2}.Release|x64.ActiveCfg = Release|x64
+		{6E845F00-D928-418A-803A-C4C176EC16A2}.Release|x64.Build.0 = Release|x64
+		{6E845F00-D928-418A-803A-C4C176EC16A2}.Release|x86.ActiveCfg = Release|Win32
+		{6E845F00-D928-418A-803A-C4C176EC16A2}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F525D7EA-8FF0-4E8B-A552-EDF72FC4CF42}
+	EndGlobalSection
+EndGlobal
