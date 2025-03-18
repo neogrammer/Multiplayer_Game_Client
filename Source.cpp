@@ -6,7 +6,8 @@
 #include <SFML/Network.hpp>
 
 #include <iostream>
-#include "src/core/CidWindow.h"
+#include <core/VideoGame.h>
+#include <entities/Player.h>
 
 
 //////////////////////////////////
@@ -15,13 +16,6 @@
 /// G U E S T
 ////////////////////////////
 
-struct Player
-{
-    std::string name;
-    uint32_t id;
-    float xpos;
-    float ypos;
-};
 struct MYIP
 {
     int num1, num2, num3, num4;
@@ -77,7 +71,7 @@ int main(int argc, char* argv[])
     window.setTitle("SFML window");
 
 
-
+    VideoGame game{ &window, &host, &guest };
 
     // run the program as long as the window is open
     sf::Clock deltaClock;
@@ -159,7 +153,8 @@ int main(int argc, char* argv[])
                         window.close();
                 }
             }
-
+            sf::Time dt = deltaClock.restart();
+            game.update(dt);
 
             soWhat = ImGui::SFML::UpdateFontTexture(); // important call: updates font texture
             ImGui::SFML::Update(window, deltaClock.restart());
@@ -170,6 +165,7 @@ int main(int argc, char* argv[])
 
             window.clear(sf::Color(47, 147, 247, 255));
 
+            game.render();
 
             ImGui::SFML::Render(window);
             window.display();

@@ -115,7 +115,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(ProjectDir)external\ImGui\ImGui_SFML3;$(ProjectDir)external\ImGui;$(ProjectDir)external;$(ProjectDir)external\sfml3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)VideoGameSource;$(ProjectDir)external\ImGui\ImGui_SFML3;$(ProjectDir)external\ImGui;$(ProjectDir)external;$(ProjectDir)external\sfml3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -134,7 +134,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
-      <AdditionalIncludeDirectories>$(ProjectDir)external\ImGui\ImGui_SFML3;$(ProjectDir)external\ImGui;$(ProjectDir)external;$(ProjectDir)external\sfml3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)VideoGameSource;$(ProjectDir)external\ImGui\ImGui_SFML3;$(ProjectDir)external\ImGui;$(ProjectDir)external;$(ProjectDir)external\sfml3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,7 +152,8 @@
     <ClCompile Include="external\ImGui\imgui_tables.cpp" />
     <ClCompile Include="external\ImGui\imgui_widgets.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="src\core\CidWindow.cpp" />
+    <ClCompile Include="VideoGameSource\core\CidWindow.cpp" />
+    <ClCompile Include="VideoGameSource\core\VideoGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="external\ImGui\imconfig.h" />
@@ -164,7 +165,9 @@
     <ClInclude Include="external\ImGui\imstb_rectpack.h" />
     <ClInclude Include="external\ImGui\imstb_textedit.h" />
     <ClInclude Include="external\ImGui\imstb_truetype.h" />
-    <ClInclude Include="src\core\CidWindow.h" />
+    <ClInclude Include="VideoGameSource\core\CidWindow.h" />
+    <ClInclude Include="VideoGameSource\core\VideoGame.h" />
+    <ClInclude Include="VideoGameSource\entities\Player.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Assets\Fonts\Crusty.ttf" />
