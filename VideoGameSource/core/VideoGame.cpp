@@ -1,14 +1,17 @@
 #include "videogame.h"
 
-bool VideoGame::update(sf::Time dt_)
+bool VideoGame::update(sf::Time dt_, Player* host_, Player* guest_)
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
+	host = host_;
+	guest = guest_;
+
+	if ( sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))
 	{
-		host->xpos += 300.f * dt_.asSeconds();
+	 guest->xpos += 300.f * dt_.asSeconds();
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left))
 	{
-		host->xpos -= 300.f * dt_.asSeconds();
+		guest->xpos -= 300.f * dt_.asSeconds();
 	}
 	return true;
 }
@@ -49,7 +52,7 @@ bool VideoGame::render()
 }
 
 
-VideoGame::VideoGame(CidWindow* cwnd_, Player* guest_, Player* host_)
+VideoGame::VideoGame(CidWindow* cwnd_, Player* host_, Player* guest_)
 	: cwnd{cwnd_}
 	, guest{ guest_ }
 	, host{host_}

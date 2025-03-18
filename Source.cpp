@@ -82,8 +82,8 @@ int main(int argc, char* argv[])
         // you are guest, send first, they are waiting to receive
         std::string nameP2 = "Guest";
         uint32_t idP2 = 2;
-        float xPosP2 = 400.f;
-        float yPosP2 = 100.f;
+        float xPosP2 = guest.xpos;
+        float yPosP2 = guest.ypos;
         sf::Packet packet;
         packet << nameP2 << idP2 << xPosP2 << yPosP2;
 
@@ -154,7 +154,7 @@ int main(int argc, char* argv[])
                 }
             }
             sf::Time dt = deltaClock.restart();
-            game.update(dt);
+            game.update(dt, &host, &guest);
 
             soWhat = ImGui::SFML::UpdateFontTexture(); // important call: updates font texture
             ImGui::SFML::Update(window, deltaClock.restart());
