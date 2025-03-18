@@ -36,16 +36,17 @@ int main(int argc, char* argv[])
     std::string ip;
     std::cout << "Type in the ip address of the host: " << std::endl;
     std::cin >> ip;
-    std::cout << "\nAnd the port it is listening on: " << std::endl;    
-    int port;
-    std::cin >> port;
+   // std::cout << "\nAnd the port it is listening on: " << std::endl;    
+    //int port = 53000;
+    //std::cin >> port;
 
-    MYIP ipaddress = MakeMyIP(ip);
-
+   MYIP ipaddress = MakeMyIP(ip);
+  
     sf::TcpSocket::Status status{};
 
     sf::TcpSocket      socket;
-    status = socket.connect({(uint8_t)ipaddress.num1, (uint8_t)ipaddress.num2, (uint8_t)ipaddress.num3, (uint8_t)ipaddress.num4 }, port);   
+    status = socket.connect(sf::IpAddress((uint8_t)ipaddress.num1, (uint8_t)ipaddress.num2, (uint8_t)ipaddress.num3, (uint8_t)ipaddress.num4), 53000);
+    //status = socket.connect({(uint8_t)ipaddress.num1, (uint8_t)ipaddress.num2, (uint8_t)ipaddress.num3, (uint8_t)ipaddress.num4 }, port);   
     if (status != sf::TcpSocket::Status::Done)
     {
         std::cout << "Error" << std::endl;
@@ -53,11 +54,11 @@ int main(int argc, char* argv[])
     }
     // this will connect
 
-    std::cout << "\n" << (uint8_t)ipaddress.num1 << " : " << (uint8_t)ipaddress.num2 << " : " << (uint8_t)ipaddress.num3 << " : " << (uint8_t)ipaddress.num4 << std::endl;
+    //std::cout << "\n" << (uint8_t)ipaddress.num1 << " : " << (uint8_t)ipaddress.num2 << " : " << (uint8_t)ipaddress.num3 << " : " << (uint8_t)ipaddress.num4 << std::endl;
 
     CidWindow window;
     window.create(800, 600, "SFML3 Game", sf::State::Windowed);
-  
+    window.setPosition({ 100, 300 });
 
     bool soWhat = ImGui::SFML::Init(window, false);
     soWhat = false;
@@ -186,10 +187,17 @@ int main(int argc, char* argv[])
 MYIP MakeMyIP(std::string ip_)
 {
     std::string one, two, three, four;
-    one = ip_.substr(0, 3);
-    two = ip_.substr(4, 1);
-    three = ip_.substr(6, 1);
-    four = ip_.substr(8, 1);
+    int dot1 = ip_.find_first_of('.');
+    one = ip_.substr(0, dot1);
+    int dot2 = ip_.substr(dot1+1, ip_.length() - dot1 - 1).find_first_of('.');
+
+    two = ip_.substr(dot1+1, dot2);
+    int dot3 = ip_.substr(dot1 + dot2 + 2, ip_.length() - dot1 - dot2 - 2).find_first_of('.');
+
+    three = ip_.substr(dot1 + dot2 + 2, dot3);
+   // int dot4 = ip_.substr(dot1 + dot2 + dot3 + 3, ip_.length() - dot1 - dot2 - dot3 - 3).find_first_of('.');
+
+    four = ip_.substr(dot1 + dot2 + dot3 + 3, ip_.length() - dot1 - dot2 - dot3 - 3);
     MYIP ip{ atoi(one.c_str()),atoi(two.c_str()),atoi(three.c_str()),atoi(four.c_str()) };
     return ip;
 }
