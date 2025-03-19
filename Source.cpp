@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include <SFML/Network.hpp>
-
+#include <core/Globals.h>
 #include <iostream>
 #include <core/VideoGame.h>
 #include <entities/Player.h>
@@ -51,7 +51,7 @@ int main(int argc, char* argv[])
     //std::cout << "\n" << (uint8_t)ipaddress.num1 << " : " << (uint8_t)ipaddress.num2 << " : " << (uint8_t)ipaddress.num3 << " : " << (uint8_t)ipaddress.num4 << std::endl;
 
     CidWindow window;
-    window.create(800, 600, "SFML3 Game", sf::State::Windowed);
+    window.create(glb::WINW, glb::WINH, "SFML3 Game", sf::State::Windowed);
     window.setPosition({ 100, 300 });
 
     bool soWhat = ImGui::SFML::Init(window, false);

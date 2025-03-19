@@ -24,20 +24,23 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="src_headers\external">
-      <UniqueIdentifier>{24a3da1e-9092-4b5e-9867-5cc51b8853e8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src_headers\external\ImGui">
-      <UniqueIdentifier>{5a01b968-c3c2-4e0a-92a8-bda51e636c1c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src_headers\external\ImGui\ImGui_SFML3">
-      <UniqueIdentifier>{c187b269-2568-4576-9f9e-0f055b3aeea9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src_headers\core">
       <UniqueIdentifier>{fd5feb9a-6bcc-4fc3-8be8-eb773b9296ee}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\core">
       <UniqueIdentifier>{362071f8-da43-4911-90e3-66229057a22b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_headers\entities">
+      <UniqueIdentifier>{795aa466-9b05-43ea-9b82-9d0200ba1e4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\entities">
+      <UniqueIdentifier>{dd2a553a-fea4-4ce4-b1fd-3e5162b8aab4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_headers\core\game_states">
+      <UniqueIdentifier>{92400fb1-5ce1-4251-a2bb-a7379a151d07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core\game_states">
+      <UniqueIdentifier>{1fa8c1d8-e294-4f37-b231-bac119b24638}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -57,40 +60,118 @@
       <Filter>external\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="src\core\CidWindow.cpp">
+    <ClCompile Include="VideoGameSource\core\CidWindow.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\VideoGame.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\game_states\LoadState.cpp">
+      <Filter>src\core\game_states</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\game_states\MenuState.cpp">
+      <Filter>src\core\game_states</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\game_states\OverState.cpp">
+      <Filter>src\core\game_states</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\game_states\PausedState.cpp">
+      <Filter>src\core\game_states</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\game_states\PlayState.cpp">
+      <Filter>src\core\game_states</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\game_states\SaveState.cpp">
+      <Filter>src\core\game_states</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\game_states\SplashState.cpp">
+      <Filter>src\core\game_states</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\game_states\TitleState.cpp">
+      <Filter>src\core\game_states</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\Globals.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\GameStateManager.cpp">
       <Filter>src\core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="external\ImGui\ImGui_SFML3\imgui-SFML.h">
-      <Filter>src_headers\external\ImGui\ImGui_SFML3</Filter>
-    </ClInclude>
-    <ClInclude Include="external\ImGui\imconfig.h">
-      <Filter>src_headers\external\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="external\ImGui\imgui.h">
-      <Filter>src_headers\external\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="external\ImGui\imgui_internal.h">
-      <Filter>src_headers\external\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="external\ImGui\imstb_rectpack.h">
-      <Filter>src_headers\external\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="external\ImGui\imstb_textedit.h">
-      <Filter>src_headers\external\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="external\ImGui\imstb_truetype.h">
-      <Filter>src_headers\external\ImGui</Filter>
-    </ClInclude>
     <ClInclude Include="external\ImGui\ImGui_SFML3\imconfig-SFML.h">
-      <Filter>src_headers\external\ImGui\ImGui_SFML3</Filter>
+      <Filter>external\ImGui\ImGui_SFML3</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ImGui\ImGui_SFML3\imgui-SFML.h">
+      <Filter>external\ImGui\ImGui_SFML3</Filter>
     </ClInclude>
     <ClInclude Include="external\ImGui\ImGui_SFML3\imgui-SFML_export.h">
-      <Filter>src_headers\external\ImGui\ImGui_SFML3</Filter>
+      <Filter>external\ImGui\ImGui_SFML3</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\CidWindow.h">
+    <ClInclude Include="external\ImGui\imconfig.h">
+      <Filter>external\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ImGui\imstb_textedit.h">
+      <Filter>external\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ImGui\imstb_truetype.h">
+      <Filter>external\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ImGui\imgui.h">
+      <Filter>external\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ImGui\imgui_internal.h">
+      <Filter>external\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ImGui\imstb_rectpack.h">
+      <Filter>external\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\CidWindow.h">
       <Filter>src_headers\core</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\VideoGame.h">
+      <Filter>src_headers\core</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\entities\Player.h">
+      <Filter>src_headers\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\game_states\LoadState.h">
+      <Filter>src_headers\core\game_states</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\game_states\MenuState.h">
+      <Filter>src_headers\core\game_states</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\game_states\OverState.h">
+      <Filter>src_headers\core\game_states</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\game_states\PausedState.h">
+      <Filter>src_headers\core\game_states</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\game_states\PlayState.h">
+      <Filter>src_headers\core\game_states</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\game_states\PlayViewID.h">
+      <Filter>src_headers\core\game_states</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\game_states\SaveState.h">
+      <Filter>src_headers\core\game_states</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\game_states\SplashState.h">
+      <Filter>src_headers\core\game_states</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\game_states\TitleState.h">
+      <Filter>src_headers\core\game_states</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\GameState.h">
+      <Filter>src_headers\core</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\Globals.h">
+      <Filter>src_headers\core</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\GameStateManager.h">
+      <Filter>src_headers\core</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\StateIDs.h">
+      <Filter>src_headers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

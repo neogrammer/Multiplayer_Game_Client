@@ -153,6 +153,16 @@
     <ClCompile Include="external\ImGui\imgui_widgets.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="VideoGameSource\core\CidWindow.cpp" />
+    <ClCompile Include="VideoGameSource\core\GameStateManager.cpp" />
+    <ClCompile Include="VideoGameSource\core\game_states\LoadState.cpp" />
+    <ClCompile Include="VideoGameSource\core\game_states\MenuState.cpp" />
+    <ClCompile Include="VideoGameSource\core\game_states\OverState.cpp" />
+    <ClCompile Include="VideoGameSource\core\game_states\PausedState.cpp" />
+    <ClCompile Include="VideoGameSource\core\game_states\PlayState.cpp" />
+    <ClCompile Include="VideoGameSource\core\game_states\SaveState.cpp" />
+    <ClCompile Include="VideoGameSource\core\game_states\SplashState.cpp" />
+    <ClCompile Include="VideoGameSource\core\game_states\TitleState.cpp" />
+    <ClCompile Include="VideoGameSource\core\Globals.cpp" />
     <ClCompile Include="VideoGameSource\core\VideoGame.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +176,19 @@
     <ClInclude Include="external\ImGui\imstb_textedit.h" />
     <ClInclude Include="external\ImGui\imstb_truetype.h" />
     <ClInclude Include="VideoGameSource\core\CidWindow.h" />
+    <ClInclude Include="VideoGameSource\core\GameState.h" />
+    <ClInclude Include="VideoGameSource\core\GameStateManager.h" />
+    <ClInclude Include="VideoGameSource\core\game_states\LoadState.h" />
+    <ClInclude Include="VideoGameSource\core\game_states\MenuState.h" />
+    <ClInclude Include="VideoGameSource\core\game_states\OverState.h" />
+    <ClInclude Include="VideoGameSource\core\game_states\PausedState.h" />
+    <ClInclude Include="VideoGameSource\core\game_states\PlayState.h" />
+    <ClInclude Include="VideoGameSource\core\game_states\PlayViewID.h" />
+    <ClInclude Include="VideoGameSource\core\game_states\SaveState.h" />
+    <ClInclude Include="VideoGameSource\core\game_states\SplashState.h" />
+    <ClInclude Include="VideoGameSource\core\game_states\TitleState.h" />
+    <ClInclude Include="VideoGameSource\core\Globals.h" />
+    <ClInclude Include="VideoGameSource\core\StateIDs.h" />
     <ClInclude Include="VideoGameSource\core\VideoGame.h" />
     <ClInclude Include="VideoGameSource\entities\Player.h" />
   </ItemGroup>
