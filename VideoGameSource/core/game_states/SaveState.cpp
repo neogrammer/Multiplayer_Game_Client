@@ -12,10 +12,9 @@ void SaveState::Input() {
     // Handle skip/continue inputs (ex: keypress, mouse click)
 }
 
-void SaveState::Update(float deltaTime) {
-    // Timer or animation updates here
+void SaveState::Update(sf::Time dt_, Player* host_, Player* guest_)
+{
 }
-
-void SaveState::Render() {
+void SaveState::Render(sf::RenderWindow& wnd_) {
     // Will draw splash screen elements (placeholder for now)
 }

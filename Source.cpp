@@ -9,6 +9,7 @@
 #include <core/VideoGame.h>
 #include <entities/Player.h>
 
+#include <core/GameStateManager.h>
 
 //////////////////////////////////
 ////////////////////////////////
@@ -51,7 +52,7 @@ int main(int argc, char* argv[])
     //std::cout << "\n" << (uint8_t)ipaddress.num1 << " : " << (uint8_t)ipaddress.num2 << " : " << (uint8_t)ipaddress.num3 << " : " << (uint8_t)ipaddress.num4 << std::endl;
 
     CidWindow window;
-    window.create(glb::WINW, glb::WINH, "SFML3 Game", sf::State::Windowed);
+    window.create((int)glb::WINW, (int)glb::WINH, "SFML3 Game", sf::State::Windowed);
     window.setPosition({ 100, 300 });
 
     bool soWhat = ImGui::SFML::Init(window, false);
@@ -72,6 +73,7 @@ int main(int argc, char* argv[])
 
 
     VideoGame game{ &window, &host, &guest };
+
 
     // run the program as long as the window is open
     sf::Clock deltaClock;
@@ -137,6 +139,7 @@ int main(int argc, char* argv[])
         // now that both are sent to each other and updated , run a game frame and then start back over reading and writing every frame.
         std::cout << host.name << host.id << host.xpos << host.ypos << std::endl;
 
+        game.input();
         if (running)
         {
 
@@ -154,6 +157,9 @@ int main(int argc, char* argv[])
                 }
             }
             sf::Time dt = deltaClock.restart();
+            
+            
+         
             game.update(dt, &host, &guest);
 
             soWhat = ImGui::SFML::UpdateFontTexture(); // important call: updates font texture
@@ -183,12 +189,12 @@ int main(int argc, char* argv[])
 MYIP MakeMyIP(std::string ip_)
 {
     std::string one, two, three, four;
-    int dot1 = ip_.find_first_of('.');
+    size_t dot1 = ip_.find_first_of('.');
     one = ip_.substr(0, dot1);
-    int dot2 = ip_.substr(dot1+1, ip_.length() - dot1 - 1).find_first_of('.');
+    size_t dot2 = ip_.substr(dot1+1, ip_.length() - dot1 - 1).find_first_of('.');
 
     two = ip_.substr(dot1+1, dot2);
-    int dot3 = ip_.substr(dot1 + dot2 + 2, ip_.length() - dot1 - dot2 - 2).find_first_of('.');
+    size_t dot3 = ip_.substr(dot1 + dot2 + 2, ip_.length() - dot1 - dot2 - 2).find_first_of('.');
 
     three = ip_.substr(dot1 + dot2 + 2, dot3);
    // int dot4 = ip_.substr(dot1 + dot2 + dot3 + 3, ip_.length() - dot1 - dot2 - dot3 - 3).find_first_of('.');

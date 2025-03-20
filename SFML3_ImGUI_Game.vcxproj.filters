@@ -42,6 +42,15 @@
     <Filter Include="src\core\game_states">
       <UniqueIdentifier>{1fa8c1d8-e294-4f37-b231-bac119b24638}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\core\resources">
+      <UniqueIdentifier>{251bc133-98eb-4623-8b05-09b217df797c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_headers\core\resources">
+      <UniqueIdentifier>{5e3e5534-7ecf-4486-8b1b-80403f1b5d5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src_headers\core\resources\tpl">
+      <UniqueIdentifier>{08a9732c-d7b3-42e2-b427-970b7ed856fb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="external\ImGui\ImGui_SFML3\imgui-SFML.cpp">
@@ -95,6 +104,12 @@
     </ClCompile>
     <ClCompile Include="VideoGameSource\core\GameStateManager.cpp">
       <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\GameState.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\resources\Cfg.cpp">
+      <Filter>src\core\resources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -173,10 +188,25 @@
     <ClInclude Include="VideoGameSource\core\StateIDs.h">
       <Filter>src_headers</Filter>
     </ClInclude>
+    <ClInclude Include="VideoGameSource\core\resources\Cfg.h">
+      <Filter>src_headers\core\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\resources\Maps.h">
+      <Filter>src_headers\core\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\resources\ResourceManager.h">
+      <Filter>src_headers\core\resources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Assets\Fonts\Crusty.ttf">
       <Filter>Assets\Fonts</Filter>
     </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="VideoGameSource\core\resources\tpl\ResourceManager.tpl">
+      <Filter>src_headers\core\resources\tpl</Filter>
+    </None>
   </ItemGroup>
 </Project>

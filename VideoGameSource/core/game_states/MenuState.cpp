@@ -12,10 +12,9 @@ void MenuState::Input() {
     // Handle skip/continue inputs (ex: keypress, mouse click)
 }
 
-void MenuState::Update(float deltaTime) {
-    // Timer or animation updates here
+void MenuState::Update(sf::Time dt_, Player* host_, Player* guest_)
+{
 }
-
-void MenuState::Render() {
+void MenuState::Render(sf::RenderWindow& wnd_) {
     // Will draw splash screen elements (placeholder for now)
 }

@@ -1,0 +1,3 @@
+C:\Users\jlhar\OneDrive\Desktop\VS_PJX\VS2022\MultiplayerGameClient\GameClient\x64\Release\SFML3_ImGUI_Game.vcxproj.MdMergeInputs.cache
+C:\Users\jlhar\OneDrive\Desktop\VS_PJX\VS2022\MultiplayerGameClient\GameClient\x64\Release\SFML3_ImGUI_Game.vcxproj.cppwinrt_plat.cache
+C:\Users\jlhar\OneDrive\Desktop\VS_PJX\VS2022\MultiplayerGameClient\GameClient\x64\Release\SFML3_ImGUI_Game.vcxproj.cppwinrt_comp.cache

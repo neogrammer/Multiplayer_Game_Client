@@ -11,10 +11,11 @@ void LoadState::Input() {
     // Handle skip/continue inputs (ex: keypress, mouse click)
 }
 
-void LoadState::Update(float deltaTime) {
-    // Timer or animation updates here
+void LoadState::Update(sf::Time dt_, Player* host_, Player* guest_)
+{
 }
 
-void LoadState::Render() {
+
+void LoadState::Render(sf::RenderWindow& wnd_) {
     // Will draw splash screen elements (placeholder for now)
 }

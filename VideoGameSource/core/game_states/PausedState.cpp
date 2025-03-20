@@ -12,10 +12,10 @@ void PausedState::Input() {
     // Handle skip/continue inputs (ex: keypress, mouse click)
 }
 
-void PausedState::Update(float deltaTime) {
-    // Timer or animation updates here
+void PausedState::Update(sf::Time dt_, Player* host_, Player* guest_)
+{
 }
 
-void PausedState::Render() {
+void PausedState::Render(sf::RenderWindow& wnd_) {
     // Will draw splash screen elements (placeholder for now)
 }

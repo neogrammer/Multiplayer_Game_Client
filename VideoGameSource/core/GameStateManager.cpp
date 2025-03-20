@@ -11,8 +11,15 @@
 
 
 
-void GameStateManager::RegisterStates()
+GameStateManager::GameStateManager()
 {
+    registerStates();
+    ChangeState(StateID::Splash);
+}
+
+void GameStateManager::registerStates()
+{
+    statePool.clear();
     statePool[StateID::Splash] = std::make_shared<SplashState>();
     statePool[StateID::Title] = std::make_shared<TitleState>();
     statePool[StateID::Menu] = std::make_shared<MenuState>();
@@ -40,20 +47,34 @@ void GameStateManager::PopState()
 
 void GameStateManager::ChangeState(StateID id)
 {
+
+
     PopState();
     PushState(id);
 }
 
 void GameStateManager::Input()
 {
+    for (auto& st : stateStack)
+    {
+        st.lock()->Input();
+    }
 }
 
-void GameStateManager::Update(float deltaTime)
+void GameStateManager::Update(sf::Time dt_, Player* host_, Player* guest_)
 {
+    for (auto& st : stateStack)
+    {
+        st.lock()->Update(dt_, host_, guest_);
+     }
 }
 
 void GameStateManager::Render(sf::RenderWindow& window)
 {
+    for (auto& st : stateStack)
+    {
+        st.lock()->Render(window);
+    }
 }
 
 bool GameStateManager::IsEmpty() const

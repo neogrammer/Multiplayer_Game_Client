@@ -14,11 +14,11 @@ void PlayState::Input() {
     // Player controls, attacks, etc.
 }
 
-void PlayState::Update(float deltaTime) {
-    // Players, enemies, projectiles, etc.
+void PlayState::Update(sf::Time deltaTime, Player* host_, Player* guest_)
+{
 }
 
-void PlayState::Render() {
+void PlayState::Render(sf::RenderWindow& wnd_) {
     // Draw backgrounds, players, effects, HUD layer by layer
 }
 

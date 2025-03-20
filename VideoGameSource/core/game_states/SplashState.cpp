@@ -12,10 +12,11 @@ void SplashState::Input() {
     // Handle skip/continue inputs (ex: keypress, mouse click)
 }
 
-void SplashState::Update(float deltaTime) {
-    // Timer or animation updates here
+void SplashState::Update(sf::Time dt_, Player* host_, Player* guest_)
+{
 }
 
-void SplashState::Render() {
+
+void SplashState::Render(sf::RenderWindow& wnd_) {
     // Will draw splash screen elements (placeholder for now)
 }

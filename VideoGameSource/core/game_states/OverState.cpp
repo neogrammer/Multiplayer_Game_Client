@@ -12,10 +12,10 @@ void OverState::Input() {
     // Handle skip/continue inputs (ex: keypress, mouse click)
 }
 
-void OverState::Update(float deltaTime) {
-    // Timer or animation updates here
+void OverState::Update(sf::Time dt_, Player* host_, Player* guest_)
+{
 }
 
-void OverState::Render() {
+void OverState::Render(sf::RenderWindow& wnd_) {
     // Will draw splash screen elements (placeholder for now)
 }
