@@ -105,11 +105,11 @@
     <ClCompile Include="VideoGameSource\core\GameStateManager.cpp">
       <Filter>src\core</Filter>
     </ClCompile>
-    <ClCompile Include="VideoGameSource\core\GameState.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="VideoGameSource\core\resources\Cfg.cpp">
       <Filter>src\core\resources</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\GameState.cpp">
+      <Filter>src\core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

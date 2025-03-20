@@ -20,7 +20,7 @@ public:
 	static void Initialize();
 	static void Uninitialize();
 	// Resource Enums 
-	enum class Textures : int { Count, Invariant, Invalid };
+	enum class Textures : int { SplashBG, TitleBG, Count, Invariant, Invalid };
 	enum class Fonts : int { Count, Invariant, Invalid };
 	enum class Music : int { Count, Invariant, Invalid };
   enum class Sounds : int { Count, Invariant, Invalid };

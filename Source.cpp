@@ -9,7 +9,7 @@
 #include <core/VideoGame.h>
 #include <entities/Player.h>
 
-#include <core/GameStateManager.h>
+#include <core/resources/Cfg.h>
 
 //////////////////////////////////
 ////////////////////////////////
@@ -24,6 +24,9 @@ struct MYIP
 MYIP MakeMyIP(std::string ip_);
 int main(int argc, char* argv[])
 {
+
+    Cfg::Initialize();
+
     Player host{ "Host",1,100.f,100.f };
     Player guest{ "Guest",2,400.f,100.f };
     bool running = true;
