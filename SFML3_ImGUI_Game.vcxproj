@@ -169,7 +169,6 @@
     <ClCompile Include="VideoGameSource\core\VideoGame.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EnumMacros.h" />
     <ClInclude Include="external\ImGui\imconfig.h" />
     <ClInclude Include="external\ImGui\imgui.h" />
     <ClInclude Include="external\ImGui\imgui_internal.h" />
@@ -193,6 +192,7 @@
     <ClInclude Include="VideoGameSource\core\game_states\TitleState.h" />
     <ClInclude Include="VideoGameSource\core\Globals.h" />
     <ClInclude Include="VideoGameSource\core\resources\Cfg.h" />
+    <ClInclude Include="VideoGameSource\core\resources\EnumMacros.h" />
     <ClInclude Include="VideoGameSource\core\resources\Maps.h" />
     <ClInclude Include="VideoGameSource\core\resources\ResourceManager.h" />
     <ClInclude Include="VideoGameSource\core\StateIDs.h" />
