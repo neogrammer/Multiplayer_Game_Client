@@ -197,6 +197,9 @@
     <ClInclude Include="VideoGameSource\core\resources\ResourceManager.h">
       <Filter>src_headers\core\resources</Filter>
     </ClInclude>
+    <ClInclude Include="EnumMacros.h">
+      <Filter>src_headers\core\resources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Assets\Fonts\Crusty.ttf">

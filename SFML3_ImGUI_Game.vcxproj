@@ -169,6 +169,7 @@
     <ClCompile Include="VideoGameSource\core\VideoGame.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EnumMacros.h" />
     <ClInclude Include="external\ImGui\imconfig.h" />
     <ClInclude Include="external\ImGui\imgui.h" />
     <ClInclude Include="external\ImGui\imgui_internal.h" />
