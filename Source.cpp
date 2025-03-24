@@ -75,7 +75,7 @@ int main(int argc, char* argv[])
     window.setTitle("SFML window");
 
 
-    VideoGame game{ &window, &host, &guest };
+    VideoGame game{&host, &guest, &window };
 
 
     // run the program as long as the window is open
@@ -152,18 +152,24 @@ int main(int argc, char* argv[])
                 ImGui::SFML::ProcessEvent(window, *event);
                 // "close requested" event: we close the window
                 if (event->is<sf::Event::Closed>())
+                {
                     window.close();
+                    break;
+                }
                 else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>())
                 {
                     if (keyPressed->scancode == sf::Keyboard::Scancode::Escape)
+                    {
                         window.close();
+                        break;
+                    }
                 }
             }
             sf::Time dt = deltaClock.restart();
             
             
          
-            game.update(dt, &host, &guest);
+            game.update(dt);
 
             soWhat = ImGui::SFML::UpdateFontTexture(); // important call: updates font texture
             ImGui::SFML::Update(window, deltaClock.restart());

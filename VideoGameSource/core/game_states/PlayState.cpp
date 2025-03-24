@@ -1,25 +1,64 @@
 #include "PlayState.h"
+#include <SFML/Graphics.hpp>
 #include "../Globals.h"
 
-PlayState::PlayState() {
-    stateViews.resize(static_cast<size_t>(PlayViewID::Count));
-
-    // Initialize each view with appropriate sizes and centers
-    stateViews[static_cast<size_t>(PlayViewID::FarBG)] = sf::View(sf::FloatRect({ 0.f, 0.f }, { glb::WINW, glb::WINH })); // Example view setup
-    stateViews[static_cast<size_t>(PlayViewID::MidBG)] = sf::View(sf::FloatRect({ 0.f, 0.f }, { glb::WINW, glb::WINH })); // Example view setup
-    // ... Initialize remaining views
+PlayState::PlayState() : GameState{} {
+    // Single main view for the splash screen
+    stateViews.resize(1);
+    stateViews[0] = sf::View(sf::FloatRect({ 0.f, 0.f }, { glb::WINW, glb::WINH })); // Example view setup
 }
 
-void PlayState::Input() {
-    // Player controls, attacks, etc.
+PlayState::PlayState(GameStateManager* mgr_, Player* host_, Player* guest_, sf::RenderWindow* wnd_)
+    : GameState{ StateID::Save, mgr_, host_, guest_, wnd_ }
+{
+    stateViews.resize(1);
+    stateViews[0] = sf::View(sf::FloatRect({ 0.f, 0.f }, { glb::WINW, glb::WINH })); // Example view setup
 }
 
-void PlayState::Update(sf::Time deltaTime, Player* host_, Player* guest_)
+PlayState::~PlayState()
 {
 }
 
+PlayState::PlayState(const PlayState& o)
+    : GameState{ StateID::Save,o.gStateMgr,o.host,o.guest,o.window }
+{
+    for (auto& vw : o.stateViews)
+        stateViews.push_back(vw);
+}
+
+PlayState& PlayState::operator=(const PlayState& o)
+{
+    window = o.window;
+    needsToAddOn = o.needsToAddOn;
+    needsToSwitchOut = o.needsToSwitchOut;
+    stateInWait = o.stateInWait;
+    gameTime = o.gameTime;
+    _sid = o._sid;
+    guest = o.guest;
+    host = o.host;
+    gStateMgr = o.gStateMgr;
+    for (auto& vw : o.stateViews)
+        stateViews.push_back(vw);
+
+    //// TODO: insert return statement here
+    //bgSpr = o.bgSpr;
+    //stateViews.resize(1);
+    //stateViews[0] = sf::View(sf::FloatRect({ 0.f, 0.f }, { glb::WINW, glb::WINH })); // Example view setup
+    return *this;
+    // TODO: insert return statement here
+}
+
+void PlayState::Input() {
+    // Handle skip/continue inputs (ex: keypress, mouse click)
+}
+
+void PlayState::Update(sf::Time dt_)
+{
+    GameState::Update(dt_);
+
+}
 void PlayState::Render(sf::RenderWindow& wnd_) {
-    // Draw backgrounds, players, effects, HUD layer by layer
+    // Will draw splash screen elements (placeholder for now)
 }
 
 sf::View& PlayState::GetView(PlayViewID id)

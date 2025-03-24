@@ -185,9 +185,6 @@
     <ClInclude Include="VideoGameSource\core\GameStateManager.h">
       <Filter>src_headers\core</Filter>
     </ClInclude>
-    <ClInclude Include="VideoGameSource\core\StateIDs.h">
-      <Filter>src_headers</Filter>
-    </ClInclude>
     <ClInclude Include="VideoGameSource\core\resources\Cfg.h">
       <Filter>src_headers\core\resources</Filter>
     </ClInclude>
@@ -200,6 +197,9 @@
     <ClInclude Include="VideoGameSource\core\resources\EnumMacros.h">
       <Filter>src_headers\core\resources</Filter>
     </ClInclude>
+    <ClInclude Include="VideoGameSource\core\StateIDs.h">
+      <Filter>src_headers\core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Assets\Fonts\Crusty.ttf">
@@ -211,5 +211,9 @@
     <None Include="VideoGameSource\core\resources\tpl\ResourceManager.tpl">
       <Filter>src_headers\core\resources\tpl</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Textures\Backgrounds\SplashScreen\SplashScreen.jpg" />
+    <Image Include="Assets\Textures\Backgrounds\TitleScreen\TitleBG.jpg" />
   </ItemGroup>
 </Project>

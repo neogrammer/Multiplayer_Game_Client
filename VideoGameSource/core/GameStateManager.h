@@ -8,12 +8,17 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Time.hpp>
 #include <entities/Player.h>
-
+#include <core/GameStateManager.h>
 
 class GameState;
 class GameStateManager {
+    sf::Time gameTime{};
 public:
-    GameStateManager();
+    GameStateManager() = delete;
+    GameStateManager(Player* host_, Player* guest_, sf::RenderWindow* wnd_);
+    GameStateManager(GameStateManager&& o);
+    GameStateManager& operator=(GameStateManager&& o);
+
     ~GameStateManager() = default;
 
 
@@ -23,15 +28,17 @@ public:
     void ChangeState(StateID id); // Replace top state with a different one
 
     void Input();    // Only top state handles input
-    void Update(sf::Time dt_, Player* host_, Player* guest_); // Maybe all states update
+    void Update(sf::Time dt_); // Maybe all states update
     void Render(sf::RenderWindow& window); // All states render for layering
 
     bool IsEmpty() const;
 
+
+    std::shared_ptr<GameState> GetState(StateID id);
 private:
     std::unordered_map<StateID, std::shared_ptr<GameState>> statePool;
     std::vector<std::weak_ptr<GameState>> stateStack;
 
-    std::shared_ptr<GameState> GetState(StateID id);
-    void registerStates();   // Initialize all states and populate the statePool
+  
+    void registerStates(Player* host_, Player* guest_, sf::RenderWindow* wnd_);   // Initialize all states and populate the statePool
 };

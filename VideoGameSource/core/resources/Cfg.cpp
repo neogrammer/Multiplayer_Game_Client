@@ -36,10 +36,10 @@ void Cfg::initSounds()
 
 void Cfg::initTextures()
 {
-	
+
 	textures.load((int)Textures::SplashBG, "Assets/Textures/Backgrounds/SplashScreen/SplashScreen.jpg");
 	textures.load((int)Textures::TitleBG, "Assets/Textures/Backgrounds/TitleScreen/TitleBG.jpg");
-
+	//textures.load((int)Textures::BusterBullet, "Assets/Textures/Projectiles/busterBulletSM.png");
 }
 
 void Cfg::destroyTextures()
