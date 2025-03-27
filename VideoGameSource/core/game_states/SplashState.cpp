@@ -52,7 +52,7 @@ SplashState& SplashState::operator=(const SplashState& o)
 
 void SplashState::Input() {
 
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter))
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Y))
     {
         stateInWait = StateID::Title;
         needsToSwitchOut = true;

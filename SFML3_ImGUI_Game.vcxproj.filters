@@ -51,6 +51,27 @@
     <Filter Include="src_headers\core\resources\tpl">
       <UniqueIdentifier>{08a9732c-d7b3-42e2-b427-970b7ed856fb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src_headers\core\IO">
+      <UniqueIdentifier>{bc1a9315-c75a-41eb-9fc5-59bfe30f99ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core\IO">
+      <UniqueIdentifier>{f63f2435-698e-4699-b8c6-bcd161ba94cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures">
+      <UniqueIdentifier>{e866820d-8b1e-40dc-8d77-b9e2b11d17e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures\Knight_player">
+      <UniqueIdentifier>{b115c53c-18dc-4fcb-b04b-2ac24b9b9ffe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures\Backgrounds">
+      <UniqueIdentifier>{f5929d75-a645-4ae8-be18-b2917d73f3ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures\Client_player">
+      <UniqueIdentifier>{9f1f7479-e405-4c97-84bd-96b2eb244aed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets\Textures\Host_player">
+      <UniqueIdentifier>{e5f199b8-90f5-45b7-bb1e-b0a0f7e237f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="external\ImGui\ImGui_SFML3\imgui-SFML.cpp">
@@ -110,6 +131,12 @@
     </ClCompile>
     <ClCompile Include="VideoGameSource\core\GameState.cpp">
       <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\core\IO\InputTarget.cpp">
+      <Filter>src\core\IO</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoGameSource\entities\PlayerSprite.cpp">
+      <Filter>src\entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +227,15 @@
     <ClInclude Include="VideoGameSource\core\StateIDs.h">
       <Filter>src_headers\core</Filter>
     </ClInclude>
+    <ClInclude Include="VideoGameSource\core\IO\InputTarget.h">
+      <Filter>src_headers\core\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\core\IO\InputTypes.h">
+      <Filter>src_headers\core\IO</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoGameSource\entities\PlayerSprite.h">
+      <Filter>src_headers\entities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Assets\Fonts\Crusty.ttf">
@@ -213,7 +249,29 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Assets\Textures\Backgrounds\SplashScreen\SplashScreen.jpg" />
-    <Image Include="Assets\Textures\Backgrounds\TitleScreen\TitleBG.jpg" />
+    <Image Include="Assets\Textures\Knight_player\Idle_KG_2.png">
+      <Filter>Assets\Textures\Knight_player</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Knight_player\Walking_KG_2.png">
+      <Filter>Assets\Textures\Knight_player</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Backgrounds\SplashScreen\SplashScreen.jpg">
+      <Filter>Assets\Textures\Backgrounds</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Backgrounds\TitleScreen\TitleBG.jpg">
+      <Filter>Assets\Textures\Backgrounds</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Client_player\Walking_KG_2.png">
+      <Filter>Assets\Textures\Client_player</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Client_player\Idle_KG_2.png">
+      <Filter>Assets\Textures\Client_player</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Host_player\Idle_KG_2.png">
+      <Filter>Assets\Textures\Host_player</Filter>
+    </Image>
+    <Image Include="Assets\Textures\Host_player\Walking_KG_2.png">
+      <Filter>Assets\Textures\Host_player</Filter>
+    </Image>
   </ItemGroup>
 </Project>

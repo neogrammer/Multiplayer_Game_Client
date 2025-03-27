@@ -49,6 +49,12 @@ TitleState& TitleState::operator=(const TitleState& o)
 
 void TitleState::Input() {
     // Start game, options, etc.
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::H))
+    {
+        stateInWait = StateID::Play;
+        needsToSwitchOut = true;
+        needsToAddOn = false;
+    }
 }
 
 void TitleState::Update(sf::Time dt_)

@@ -2,9 +2,14 @@
 #include "../GameState.h"
 #include "PlayViewID.h"
 
+
+#include <entities/PlayerSprite.h>
+
 class PlayState : public GameState {
 public:
-
+    sf::Texture idle{ "Assets/Textures/Knight_player/Idle_KG_2.png" };
+    sf::Texture walk{ "Assets/Textures/Knight_player/Walking_KG_2.png" };
+    PlayerSprite* player;
 
     PlayState();
     PlayState(GameStateManager* mgr_, Player* host_, Player* guest_, sf::RenderWindow* wnd_);

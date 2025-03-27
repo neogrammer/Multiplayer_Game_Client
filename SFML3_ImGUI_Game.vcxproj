@@ -168,8 +168,10 @@
     <ClCompile Include="VideoGameSource\core\game_states\SplashState.cpp" />
     <ClCompile Include="VideoGameSource\core\game_states\TitleState.cpp" />
     <ClCompile Include="VideoGameSource\core\Globals.cpp" />
+    <ClCompile Include="VideoGameSource\core\IO\InputTarget.cpp" />
     <ClCompile Include="VideoGameSource\core\resources\Cfg.cpp" />
     <ClCompile Include="VideoGameSource\core\VideoGame.cpp" />
+    <ClCompile Include="VideoGameSource\entities\PlayerSprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="external\ImGui\imconfig.h" />
@@ -194,6 +196,8 @@
     <ClInclude Include="VideoGameSource\core\game_states\SplashState.h" />
     <ClInclude Include="VideoGameSource\core\game_states\TitleState.h" />
     <ClInclude Include="VideoGameSource\core\Globals.h" />
+    <ClInclude Include="VideoGameSource\core\IO\InputTarget.h" />
+    <ClInclude Include="VideoGameSource\core\IO\InputTypes.h" />
     <ClInclude Include="VideoGameSource\core\resources\Cfg.h" />
     <ClInclude Include="VideoGameSource\core\resources\EnumMacros.h" />
     <ClInclude Include="VideoGameSource\core\resources\Maps.h" />
@@ -201,6 +205,7 @@
     <ClInclude Include="VideoGameSource\core\StateIDs.h" />
     <ClInclude Include="VideoGameSource\core\VideoGame.h" />
     <ClInclude Include="VideoGameSource\entities\Player.h" />
+    <ClInclude Include="VideoGameSource\entities\PlayerSprite.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Assets\Fonts\Crusty.ttf" />
@@ -212,6 +217,12 @@
   <ItemGroup>
     <Image Include="Assets\Textures\Backgrounds\SplashScreen\SplashScreen.jpg" />
     <Image Include="Assets\Textures\Backgrounds\TitleScreen\TitleBG.jpg" />
+    <Image Include="Assets\Textures\Client_player\Idle_KG_2.png" />
+    <Image Include="Assets\Textures\Client_player\Walking_KG_2.png" />
+    <Image Include="Assets\Textures\Host_player\Idle_KG_2.png" />
+    <Image Include="Assets\Textures\Host_player\Walking_KG_2.png" />
+    <Image Include="Assets\Textures\Knight_player\Idle_KG_2.png" />
+    <Image Include="Assets\Textures\Knight_player\Walking_KG_2.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
