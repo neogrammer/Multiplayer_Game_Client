@@ -1,5 +1,4 @@
 #include "InputTarget.h"
-#include <SFML/Window/Keyboard.hpp>
 
 InputTarget::InputTarget(sf::Sprite* target_)
 	: _target{target_}

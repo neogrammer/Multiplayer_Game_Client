@@ -1,6 +1,4 @@
 #include "PlayerSprite.h"
-#include "Player.h"
-
 PlayerSprite::PlayerSprite(sf::Texture* tex_)
 	: sf::Sprite{*tex_}
 	, InputTarget{this}
@@ -72,6 +70,14 @@ void PlayerSprite::update(sf::Time dt_)
 	}
 	else
 	{
+		if ((!sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)) || (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A) && sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)))
+		{
+			_movingLeft = false;
+			_movingRight = false;
+			InputTarget::unhandleAction(Input::Action::MoveLeft);
+			InputTarget::unhandleAction(Input::Action::MoveRight);
+		}
+
 		if (_movingLeft)
 		{
 			if (currAnim != "Walk" || currDir != "Left")

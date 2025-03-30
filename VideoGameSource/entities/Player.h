@@ -7,4 +7,5 @@ struct Player
         uint32_t id;
         float xpos;
         float ypos;
+        float dt;
 }; 

@@ -1,7 +1,7 @@
 #pragma once
 #include <core/IO/InputTarget.h>
 #include <SFML/System/Time.hpp>
-#include <SFML/Graphics/Sprite.hpp>
+
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Rect.hpp>

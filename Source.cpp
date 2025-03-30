@@ -89,8 +89,9 @@ int main(int argc, char* argv[])
         uint32_t idP2 = 2;
         float xPosP2 = guest.xpos;
         float yPosP2 = guest.ypos;
+        float dtTimeUnused = 0.00166667f;
         sf::Packet packet;
-        packet << nameP2 << idP2 << xPosP2 << yPosP2;
+        packet << nameP2 << idP2 << xPosP2 << yPosP2 << dtTimeUnused;
 
         status = socket.send(packet); // blocking, maybe turn off blocking and use a selector?
 
@@ -109,6 +110,7 @@ int main(int argc, char* argv[])
         uint32_t idP1;
         float xPosP1;
         float yPosP1;
+        float dtTime;
         {
             sf::Packet packet;
             status = socket.receive(packet); // blocking    
@@ -123,12 +125,16 @@ int main(int argc, char* argv[])
                     if (packet >> xPosP1) {
                         if (packet >> yPosP1)
                         {
-                            // only got here if all variables are now filled correctly
-                            error = false;
-                            host.name = nameP1;
-                            host.id = idP1;
-                            host.xpos = xPosP1;
-                            host.ypos = yPosP1;
+                            if (packet >> dtTime)
+                            {
+                                // only got here if all variables are now filled correctly
+                                error = false;
+                                host.name = nameP1;
+                                host.id = idP1;
+                                host.xpos = xPosP1;
+                                host.ypos = yPosP1;
+                                host.dt = dtTime;
+                            }
                         }
                     }
                 }
@@ -140,7 +146,7 @@ int main(int argc, char* argv[])
             }
         }
         // now that both are sent to each other and updated , run a game frame and then start back over reading and writing every frame.
-        std::cout << host.name << host.id << host.xpos << host.ypos << std::endl;
+        std::cout << host.name << host.id << host.xpos << host.ypos << host.dt << std::endl;
 
         game.input();
         if (running)
@@ -165,14 +171,14 @@ int main(int argc, char* argv[])
                     }
                 }
             }
-            sf::Time dt = deltaClock.restart();
+            sf::Time dt = sf::seconds(host.dt);
             
             
          
             game.update(dt);
 
             soWhat = ImGui::SFML::UpdateFontTexture(); // important call: updates font texture
-            ImGui::SFML::Update(window, deltaClock.restart());
+            ImGui::SFML::Update(window, dt);
 
             ImGui::Begin("Hello, world!");
             ImGui::Button("Look at this pretty button");
